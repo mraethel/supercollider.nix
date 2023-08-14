@@ -1,9 +1,7 @@
 {
   inputs = {
     supercollider = {
-      url = "https://github.com/mraethel/supercollider.git";
-      type = "git";
-      submodules = true;
+      url = "git+https://github.com/mraethel/supercollider?ref=topic/pass-multiple-sclang-configurations&submodules=1";
       flake = false;
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -33,12 +31,13 @@
       };
       sclang-with-superdirt = pkgs.callPackage ./packages/sclang-with-superdirt.nix {
         supercollider = packages.supercollider-with-superdirt;
-        inherit (lib.supercolliderQuarks) dirtsamples;
+        inherit (lib.supercolliderQuarks.superdirt) startupFile;
       };
     };
     lib = {
       writeQuarkConf = quark: pkgs.callPackage ./lib/writeQuarkConf.nix { inherit quark; };
-      supercolliderQuarks = pkgs.callPackage ./lib/supercolliderQuarks.nix { inherit (lib) writeQuarkConf; };
+      getQuarkConfPath = quark: pkgs.callPackage ./lib/getQuarkConfPath.nix { inherit quark; inherit (lib) writeQuarkConf; };
+      supercolliderQuarks = pkgs.callPackage ./lib/supercolliderQuarks.nix { inherit (lib) getQuarkConfPath; };
     };
   });
 }

@@ -20,5 +20,5 @@
   '';
 
   pname = "supercollider";
-  inherit ( supercollider-unwrapped ) version meta;
+  inherit (supercollider-unwrapped) version meta;
 }
