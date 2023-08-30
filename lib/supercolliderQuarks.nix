@@ -35,4 +35,16 @@
     confPath = getQuarkConfPath superdirt;
     startupFile = pkgs.callPackage ./startupFiles/superdirt.nix { inherit dirtsamples; };
   };
+  mraethel = {
+    name = "mraethel";
+    src = fetchFromGitHub {
+      owner = "mraethel";
+      repo = "mraethel.quark";
+      rev = "master";
+      sha256 = "5qUN6iTM58A+Ff7zUBFhv+rID5ualbIILcc98pNr/eo=";
+    };
+    dependencies = [ superdirt ];
+    confPath = getQuarkConfPath mraethel;
+    startupFile = ./startupFiles/mraethel.sc;
+  };
 }
