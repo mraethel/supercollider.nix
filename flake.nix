@@ -6,9 +6,30 @@
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+
+    vowel = {
+      url = "github:supercollider-quarks/vowel";
+      flake = false;
+    };
+    dirtsamples = {
+      url = "github:tidalcycles/dirt-samples";
+      flake = false;
+    };
+    superdirt = {
+      url = "github:musikinformatik/superdirt";
+      flake = false;
+    };
+    mraethel = {
+      url = "github:mraethel/mraethel.quark";
+      flake = false;
+    };
+    drumachines = {
+      url = "github:geikha/tidal-drum-machines";
+      flake = false;
+    };
   };
 
-  outputs = {
+  outputs = inputs@{
     self,
     supercollider,
     nixpkgs,
@@ -37,7 +58,7 @@
     lib = {
       writeQuarkConf = quark: pkgs.callPackage ./lib/writeQuarkConf.nix { inherit quark; };
       getQuarkConfPath = quark: pkgs.callPackage ./lib/getQuarkConfPath.nix { inherit quark; inherit (lib) writeQuarkConf; };
-      supercolliderQuarks = pkgs.callPackage ./lib/supercolliderQuarks.nix { inherit (lib) getQuarkConfPath; };
+      supercolliderQuarks = pkgs.callPackage ./lib/supercolliderQuarks.nix { inherit inputs; inherit (lib) getQuarkConfPath; };
     };
   });
 }

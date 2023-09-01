@@ -11,7 +11,8 @@
   port ? 57120,
   outBusChannel ? 0,
   latency ? 0.3,
-  customStartupFile ? null,
+  customStartupFiles ? [],
+  customSoundFiles ? [],
   lib,
   writeText
 }: writeText "superdirt.sc" ''
@@ -27,9 +28,10 @@ s.reboot {
         ~dirt.stop;
         ~dirt = SuperDirt(${ toString numBusChannels }, s);
         ~dirt.loadSoundFiles("${ dirtsamples.src }/*");
+        ${ lib.concatMapStringsSep "\n" (soundFile: "~dirt.loadSoundFiles(\"${ soundFile.src }\"${ lib.optionalString (soundFile ? namingFunction) ", namingFunction: ${ soundFile.namingFunction }"});") customSoundFiles }
         ${ lib.optionalString sync "s.sync;" }
         ~dirt.start(${ toString port }, ${ toString outBusChannel } ! ${ toString numBusChannels });
-        ${ lib.optionalString (customStartupFile != null) "\"${ customStartupFile }\".load" }
+        ${ lib.concatMapStringsSep "\n" (startupFile: "\"${ startupFile }\".load;") customStartupFiles }
     };
     s.latency = ${ toString latency };
 };

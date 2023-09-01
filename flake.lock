@@ -1,15 +1,47 @@
 {
   "nodes": {
+    "dirtsamples": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667426233,
+        "narHash": "sha256-Zl2bi9QofcrhU63eMtg+R6lhV9ExQS/0XNTJ+oq65Uo=",
+        "owner": "tidalcycles",
+        "repo": "dirt-samples",
+        "rev": "92f2145e661b397e62ca0ff3965819e7c7db0dad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tidalcycles",
+        "repo": "dirt-samples",
+        "type": "github"
+      }
+    },
+    "drumachines": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696368873,
+        "narHash": "sha256-A0TCkQFXXNKRVhG6sQJPieH61htPUaRCKHsmnU8hYhE=",
+        "owner": "geikha",
+        "repo": "tidal-drum-machines",
+        "rev": "32e58da21ed26cef36df6642d0e964803106605f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "geikha",
+        "repo": "tidal-drum-machines",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1689068808,
-        "narHash": "sha256-6ixXo3wt24N/melDWjq70UuHQLxGV8jZvooRanIHXw0=",
+        "lastModified": 1694529238,
+        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "919d646de7be200f3bf08cb76ae1f09402b6f9b4",
+        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
         "type": "github"
       },
       "original": {
@@ -18,13 +50,29 @@
         "type": "github"
       }
     },
+    "mraethel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693518889,
+        "narHash": "sha256-5qUN6iTM58A+Ff7zUBFhv+rID5ualbIILcc98pNr/eo=",
+        "owner": "mraethel",
+        "repo": "mraethel.quark",
+        "rev": "b33e903c50501bcf9e3be12c8debf70a65d6c5fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mraethel",
+        "repo": "mraethel.quark",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1691899779,
-        "narHash": "sha256-IBf4KVr/UQJlzrqB2/IHtlvmwsvyIVLPerSzCPU/6Xk=",
+        "lastModified": 1697059129,
+        "narHash": "sha256-9NJcFF9CEYPvHJ5ckE8kvINvI84SZZ87PvqMbH6pro0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "100a1550b0e7a64b960c625b656f9229bdef5f87",
+        "rev": "5e4c2ada4fcd54b99d56d7bd62f384511a7e2593",
         "type": "github"
       },
       "original": {
@@ -36,27 +84,49 @@
     },
     "root": {
       "inputs": {
+        "dirtsamples": "dirtsamples",
+        "drumachines": "drumachines",
         "flake-utils": "flake-utils",
+        "mraethel": "mraethel",
         "nixpkgs": "nixpkgs",
-        "supercollider": "supercollider"
+        "supercollider": "supercollider",
+        "superdirt": "superdirt",
+        "vowel": "vowel"
       }
     },
     "supercollider": {
       "flake": false,
       "locked": {
-        "lastModified": 1691378359,
-        "narHash": "sha256-T9qVtX/nAKVaOPX3B3eXzIRuhEFSSE+CTIhDwAVCfyE=",
-        "ref": "refs/heads/develop",
-        "rev": "1161e341fcccaaf6f434829b3add3294b49bdd2d",
-        "revCount": 25905,
+        "lastModified": 1692775892,
+        "narHash": "sha256-ZhiR7FWMxjcfBuFnv1HLsJdsba2lxPOH7LxGVHw0K7s=",
+        "ref": "topic/pass-multiple-sclang-configurations",
+        "rev": "f030f814e95f60a4ed7f874686c235ca396488ea",
+        "revCount": 25912,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/mraethel/supercollider.git"
+        "url": "https://github.com/mraethel/supercollider"
       },
       "original": {
+        "ref": "topic/pass-multiple-sclang-configurations",
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/mraethel/supercollider.git"
+        "url": "https://github.com/mraethel/supercollider"
+      }
+    },
+    "superdirt": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1697010260,
+        "narHash": "sha256-D9EeBx94xP24CoNQKmu0gYaVplBkqb7KWcW3+5Ed+8Y=",
+        "owner": "musikinformatik",
+        "repo": "superdirt",
+        "rev": "3b1f8729bcc20a0318db8e55c5a01eabe1613d42",
+        "type": "github"
+      },
+      "original": {
+        "owner": "musikinformatik",
+        "repo": "superdirt",
+        "type": "github"
       }
     },
     "systems": {
@@ -71,6 +141,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "vowel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1641306144,
+        "narHash": "sha256-zfF6cvAGDNYWYsE8dOIo38b+dIymd17Pexg0HiPFbxM=",
+        "owner": "supercollider-quarks",
+        "repo": "vowel",
+        "rev": "ab59caa870201ecf2604b3efdd2196e21a8b5446",
+        "type": "github"
+      },
+      "original": {
+        "owner": "supercollider-quarks",
+        "repo": "vowel",
         "type": "github"
       }
     }
