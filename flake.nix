@@ -60,5 +60,8 @@
       getQuarkConfPath = quark: pkgs.callPackage ./lib/getQuarkConfPath.nix { inherit quark; inherit (lib) writeQuarkConf; };
       supercolliderQuarks = pkgs.callPackage ./lib/supercolliderQuarks.nix { inherit inputs; inherit (lib) getQuarkConfPath; };
     };
+    devShells = {
+      scformat = pkgs.callPackage ./devShells/scformat.nix { };
+    };
   });
 }

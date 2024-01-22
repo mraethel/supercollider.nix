@@ -5,7 +5,7 @@ flake.nix
 ├── lib
 │   ├── supercolliderQuarks(.nix)       # Contains all Quarks information
 │   │   └── quarks...                   # Long, Long, Long list of Quarks
-│   │       ├── src                     # e.g. fetchFromGithub or other fetchers
+│   │       ├── src                     # e.g. flakes, fetchFromGithub or other fetchers
 │   │       ├── dependencies    (opt)   # Recursive list of dependencies (watch out for dependency cycles!)
 │   │       ├── confPath                # String of paths to the sclang_conf.yaml files of the quark and its dependencies (see lib/getQuarkConfPath for details!)
 │   │       └── startupFile     (opt)   # Path of the default startupFile used to setup the quark and to be passed to sclang/scide shell applications
